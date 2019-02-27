@@ -20,13 +20,16 @@
         <div class="row">
 
             <div class="col-12">
-                <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbotron-fluid pb-2">
                     <div class="container">
                         <h1 class="display-4 text-center text-monospace">Crystal Collector</h1>
                         <p class="lead text-center text-monospace">You are given a random number.</p>
                         <p class="lead text-center text-monospace">Each crystal below is worth a specific amount of points when clicked.</p>
                         <p class="lead text-center text-monospace">Your goal is to match the number you are given.</p>
                         <p class="lead text-center text-monospace font-weight-bold">You will lose the game if your points exceed this number.</p>
+                        <h1 id="domTarget" class="text-center text-monospace"></h1>
+                        <button id="tryAgain" type="button" class="btn btn-info text-center btn-block btn-large font-weight-bold">Try again?</button>
+
                     </div>
                 </div>
         
@@ -40,6 +43,11 @@
                 <img class="crystals" src="images/gem2.png" height="270" width="270" alt="">
                 <img class="crystals" src="images/gem3.png" height="270" width="270" alt="">
                 <img class="crystals" src="images/gem4.png" height="270" width="270" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 id="domScore" class="text-center text-monospace"></h1>
             </div>
         </div>
     </div>

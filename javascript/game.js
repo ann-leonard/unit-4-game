@@ -1,30 +1,44 @@
 
 var images = $(".crystals");
-var targetNumber = Math.floor(Math.random() * (120 - 19) + 19)
+var targetNumber = randRange(19,120)
 var imageNumbers = [];
 var score = 0;
-var listMultiples;
+var listMultiples=multiplesOfTargetNumber(targetNumber);
 
-
-
-function multiplesOfTargetNumber(targetNumber){
-    listMultiples = []
-    for (x=0; x<targetNumber;x++){
-        if (targetNumber % x === 0){
-            listMultiples.push(x)}
-    break
+var image_index=[0,1,2,3]
+ 
+function assignImageNumbers(list){
+    randomizedImageIndex=[]
+    for (x=0;x<images.length;x++){
+        random_index=randRange(0,list.length)
+        randomizedImageIndex.push(list[random_index])
+        list.pop(random_index)
     }
-    if (listMultiples >= 4){
-        listMultiples = imageNumbers;
+    return randomizedImageIndex
+}
+function randRange(min,max){
+    return Math.floor(Math.random() * (max - min) + min)
+}
+
+
+
+
+function multiplesOfTargetNumber(n){
+   var multiples = []
+    //iterates over every number until targetNumber
+    for (x=0; x<n;x++){ 
+
+        if (n % x === 0){
+            multiples.push(x)}
+    }
+    //if (listMultiples >= 4){
+     //   listMultiples = imageNumbers;
     
-    if (imageNumbers > 4){
-            imageNumbers.pop();
-        }
-
-    }
-   
-
-return listMultiples
+    //if (imageNumbers > 4){
+    //       imageNumbers.pop();
+    //    }
+    //}
+    return multiples
 }
 
 
@@ -34,7 +48,3 @@ $(images[0]).on("click",function(){
 })
 
 
-console.log(targetNumber)
-console.log(listMultiples)
-console.log(score)
-multiplesOfTargetNumber(targetNumber);
